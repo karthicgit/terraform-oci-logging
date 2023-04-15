@@ -175,6 +175,8 @@ module "apigwlog" {
   logdefinition          = local.apigwlogdef
   log_retention_duration = var.log_retention_duration
   loggroup               = oci_logging_log_group.apigwloggroup
+  existing_loggroup = local.existing_apigwloggroup
+  
 
   count = length(local.apigwlogdef) >= 1 ? 1 : 0
 
@@ -202,6 +204,7 @@ module "devopslog" {
   logdefinition          = local.devopslogdef
   log_retention_duration = var.log_retention_duration
   loggroup               = oci_logging_log_group.devopsloggroup
+  existing_loggroup = local.existing_devopsloggroup
 
   count = length(local.devopslogdef) >= 1 ? 1 : 0
 
@@ -214,6 +217,7 @@ module "emaillog" {
   logdefinition          = local.emaillogdef
   log_retention_duration = var.log_retention_duration
   loggroup               = oci_logging_log_group.emailloggroup
+  existing_loggroup = local.existing_emailloggroup
 
   count = length(local.emaillogdef) >= 1 ? 1 : 0
 
@@ -225,6 +229,7 @@ module "eventlog" {
   logdefinition          = local.eventlogdef
   log_retention_duration = var.log_retention_duration
   loggroup               = oci_logging_log_group.eventloggroup
+  existing_loggroup = local.existing_eventloggroup
 
   count = length(local.eventlogdef) >= 1 ? 1 : 0
 
@@ -237,6 +242,7 @@ module "funclog" {
   logdefinition          = local.funclogdef
   log_retention_duration = var.log_retention_duration
   loggroup               = oci_logging_log_group.funcloggroup
+  existing_loggroup = local.existing_funcloggroup
 
   count = length(local.funclogdef) >= 1 ? 1 : 0
 
@@ -249,6 +255,7 @@ module "intlog" {
   logdefinition          = local.intlogdef
   log_retention_duration = var.log_retention_duration
   loggroup               = oci_logging_log_group.intloggroup
+  existing_loggroup = local.existing_intloggroup
 
   count = length(local.intlogdef) >= 1 ? 1 : 0
 
@@ -260,6 +267,7 @@ module "lblog" {
   logdefinition          = local.lblogdef
   log_retention_duration = var.log_retention_duration
   loggroup               = oci_logging_log_group.lbloggroup
+  existing_loggroup = local.existing_lbloggroup
 
   count = length(local.lblogdef) >= 1 ? 1 : 0
 
@@ -272,6 +280,7 @@ module "mediaflowlog" {
   logdefinition          = local.medialogdef
   log_retention_duration = var.log_retention_duration
   loggroup               = oci_logging_log_group.medialoggroup
+  existing_loggroup = local.existing_medialoggroup
 
   count = length(local.medialogdef) >= 1 ? 1 : 0
 
@@ -284,7 +293,7 @@ module "objectstorelog" {
   logdefinition          = local.oslogdef
   log_retention_duration = var.log_retention_duration
   loggroup               = oci_logging_log_group.osloggroup
-
+  existing_loggroup = local.existing_osloggroup
   count = length(local.oslogdef) >= 1 ? 1 : 0
 
 }
@@ -297,6 +306,7 @@ module "vcnlog" {
   log_retention_duration = var.log_retention_duration
   loggroup               = oci_logging_log_group.vcnloggroup
   vcn_id                 = var.vcn_id
+  existing_loggroup = local.existing_vcnloggroup
 
   count = length(local.vcnlogdef) >= 1 ? 1 : 0
 
@@ -309,6 +319,7 @@ module "vpnlog" {
   logdefinition          = local.vpnlogdef
   log_retention_duration = var.log_retention_duration
   loggroup               = oci_logging_log_group.vpnloggroup
+  existing_loggroup = local.existing_vpnloggroup
 
   count = length(local.vpnlogdef) >= 1 ? 1 : 0
 
@@ -321,6 +332,7 @@ module "waflog" {
   logdefinition          = local.waflogdef
   log_retention_duration = var.log_retention_duration
   loggroup               = oci_logging_log_group.wafloggroup
+  existing_loggroup = local.existing_wafloggroup
 
   count = length(local.waflogdef) >= 1 ? 1 : 0
 

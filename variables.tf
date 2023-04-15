@@ -71,3 +71,8 @@ variable "vcn_id" {
   description = "VCN OCID"
   default     = "none"
 }
+
+variable "existing_loggroup" {
+  type = list(string)
+  default = [""]
+}
